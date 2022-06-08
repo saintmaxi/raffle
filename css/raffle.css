@@ -204,9 +204,10 @@ p {
       }
       
       #number-to-mint {
-        font-size: calc(25px + 3.5vw) !important;
-        line-height: calc(25px + 3.5vw) !important;
+        font-size: calc(25px + 2.5vw) !important;
+        line-height: calc(25px + 2.5vw) !important;
         margin: 0;
+        width: 50%;
       }
 
       #max-button {
