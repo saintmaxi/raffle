@@ -12,10 +12,10 @@ const characterStorageAbi = () => {
 return `[ { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [], "name": "characterMain", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "name": "characters", "outputs": [ { "internalType": "uint8", "name": "race_", "type": "uint8" }, { "internalType": "uint8", "name": "renderType_", "type": "uint8" }, { "internalType": "uint16", "name": "transponderId_", "type": "uint16" }, { "internalType": "uint16", "name": "spaceCapsuleId_", "type": "uint16" }, { "internalType": "uint8", "name": "augments_", "type": "uint8" }, { "internalType": "uint16", "name": "basePoints_", "type": "uint16" }, { "internalType": "uint16", "name": "totalEquipmentBonus_", "type": "uint16" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "", "type": "address" } ], "name": "contractToRace", "outputs": [ { "internalType": "uint8", "name": "", "type": "uint8" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "", "type": "address" } ], "name": "controllers", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "components": [ { "internalType": "uint8", "name": "race_", "type": "uint8" }, { "internalType": "uint8", "name": "renderType_", "type": "uint8" }, { "internalType": "uint16", "name": "transponderId_", "type": "uint16" }, { "internalType": "uint16", "name": "spaceCapsuleId_", "type": "uint16" }, { "internalType": "uint8", "name": "augments_", "type": "uint8" }, { "internalType": "uint16", "name": "basePoints_", "type": "uint16" }, { "internalType": "uint16", "name": "totalEquipmentBonus_", "type": "uint16" } ], "internalType": "struct MTMCharacterStorage.Character", "name": "Character_", "type": "tuple" } ], "name": "createCharacter", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "name": "equipments", "outputs": [ { "internalType": "uint8", "name": "weaponUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "chestUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "headUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "legsUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "vehicleUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "armsUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "artifactUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "ringUpgrades_", "type": "uint8" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" } ], "name": "getCharacter", "outputs": [ { "components": [ { "internalType": "uint8", "name": "race_", "type": "uint8" }, { "internalType": "uint8", "name": "renderType_", "type": "uint8" }, { "internalType": "uint16", "name": "transponderId_", "type": "uint16" }, { "internalType": "uint16", "name": "spaceCapsuleId_", "type": "uint16" }, { "internalType": "uint8", "name": "augments_", "type": "uint8" }, { "internalType": "uint16", "name": "basePoints_", "type": "uint16" }, { "internalType": "uint16", "name": "totalEquipmentBonus_", "type": "uint16" } ], "internalType": "struct MTMCharacterStorage.Character", "name": "", "type": "tuple" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" } ], "name": "getEquipment", "outputs": [ { "components": [ { "internalType": "uint8", "name": "weaponUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "chestUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "headUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "legsUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "vehicleUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "armsUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "artifactUpgrades_", "type": "uint8" }, { "internalType": "uint8", "name": "ringUpgrades_", "type": "uint8" } ], "internalType": "struct MTMCharacterStorage.Equipment", "name": "", "type": "tuple" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "contractAddress_", "type": "address" } ], "name": "getRace", "outputs": [ { "internalType": "uint8", "name": "", "type": "uint8" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" } ], "name": "getStats", "outputs": [ { "components": [ { "internalType": "uint8", "name": "strength_", "type": "uint8" }, { "internalType": "uint8", "name": "agility_", "type": "uint8" }, { "internalType": "uint8", "name": "constitution_", "type": "uint8" }, { "internalType": "uint8", "name": "intelligence_", "type": "uint8" }, { "internalType": "uint8", "name": "spirit_", "type": "uint8" } ], "internalType": "struct MTMCharacterStorage.Stats", "name": "", "type": "tuple" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "name": "names", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "owner", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "agility_", "type": "uint8" } ], "name": "setAgility", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "upgrade_", "type": "uint8" } ], "name": "setArmsUpgrades", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "upgrade_", "type": "uint8" } ], "name": "setArtifactUpgrades", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "augments_", "type": "uint8" } ], "name": "setAugments", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint16", "name": "basePoints_", "type": "uint16" } ], "name": "setBasePoints", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "address_", "type": "address" } ], "name": "setCharacterMain", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "upgrade_", "type": "uint8" } ], "name": "setChestUpgrades", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "constitution_", "type": "uint8" } ], "name": "setConstitution", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "contractAddress_", "type": "address" }, { "internalType": "uint8", "name": "race_", "type": "uint8" } ], "name": "setContractToRace", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "address_", "type": "address" }, { "internalType": "bool", "name": "bool_", "type": "bool" } ], "name": "setController", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "upgrade_", "type": "uint8" } ], "name": "setHeadUpgrades", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "intelligence_", "type": "uint8" } ], "name": "setIntelligence", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "upgrade_", "type": "uint8" } ], "name": "setLegsUpgrades", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "string", "name": "name_", "type": "string" } ], "name": "setName", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "address_", "type": "address" } ], "name": "setNewOwner", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "race_", "type": "uint8" } ], "name": "setRace", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "renderType_", "type": "uint8" } ], "name": "setRenderType", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "upgrade_", "type": "uint8" } ], "name": "setRingUpgrades", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint16", "name": "spaceCapsuleId_", "type": "uint16" } ], "name": "setSpaceCapsuleId", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "spirit_", "type": "uint8" } ], "name": "setSpirit", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "strength_", "type": "uint8" } ], "name": "setStrength", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint16", "name": "totalEquipmentBonus_", "type": "uint16" } ], "name": "setTotalEquipmentBonus", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint16", "name": "transponderId_", "type": "uint16" } ], "name": "setTransponderId", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "upgrade_", "type": "uint8" } ], "name": "setVehicleUpgrades", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId_", "type": "uint256" }, { "internalType": "uint8", "name": "upgrade_", "type": "uint8" } ], "name": "setWeaponUpgrades", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "name": "stats", "outputs": [ { "internalType": "uint8", "name": "strength_", "type": "uint8" }, { "internalType": "uint8", "name": "agility_", "type": "uint8" }, { "internalType": "uint8", "name": "constitution_", "type": "uint8" }, { "internalType": "uint8", "name": "intelligence_", "type": "uint8" }, { "internalType": "uint8", "name": "spirit_", "type": "uint8" } ], "stateMutability": "view", "type": "function" } ]`;
 };
 
-const raffleAddress = "0x3DC6a9DFD765889406A16b33D14579C5dbfCe9Dd";
-// const raffleAbi = () => {
-//     return ``;
-// };
+const raffleAddress = "0xBFDCF08D69482233eC2a90513a07CDC82342f714";
+const raffleAbi = () => {
+    return `[{"inputs":[],"name":"CS","outputs":[{"internalType":"contract iCS","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"MES","outputs":[{"internalType":"contract iMES","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"Martians","outputs":[{"internalType":"contract IERC721","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"index_","type":"uint256"},{"internalType":"uint256","name":"modulo_","type":"uint256"}],"name":"_getInertiaOfIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"index_","type":"uint256"},{"internalType":"uint256","name":"modulo_","type":"uint256"}],"name":"_getRaffleWinner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_getTotalEntries","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"address_","type":"address"}],"name":"_getTotalEntriesOfAddress","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"commitData","outputs":[{"internalType":"address","name":"entrant","type":"address"},{"internalType":"uint64","name":"entries","type":"uint64"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"inertia_","type":"uint256"}],"name":"getRaffleWinnerFromInertia","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pullRaffleInertia","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount_","type":"uint256"},{"internalType":"uint256","name":"tokenId_","type":"uint256"}],"name":"raffleCommit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"raffleInertia","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"new_","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"viewCommitData","outputs":[{"components":[{"internalType":"address","name":"entrant","type":"address"},{"internalType":"uint64","name":"entries","type":"uint64"}],"internalType":"struct MESCommitBasedRaffle.CommitData[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountOfWinners_","type":"uint256"}],"name":"viewInertiaResults","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"start_","type":"uint256"},{"internalType":"uint256","name":"end_","type":"uint256"}],"name":"viewInertiaResultsPaginated","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountOfWinners_","type":"uint256"}],"name":"viewRaffleResults","outputs":[{"internalType":"address[]","name":"","type":"address[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"start_","type":"uint256"},{"internalType":"uint256","name":"end_","type":"uint256"}],"name":"viewRaffleResultsPaginated","outputs":[{"internalType":"address[]","name":"","type":"address[]"}],"stateMutability":"view","type":"function"}]`;
+};
 
 const mesAddress = "0x3c2eb40d25a4b2b5a068a959a40d57d63dc98b95";
 const mesAbi = () => {
@@ -48,7 +48,7 @@ const formatEther = (balance_) => { return ethers.utils.formatEther(balance_) };
 const parseEther = (eth_) => { return ethers.utils.parseEther(eth_) }; // multiplies by 18 modulus
 const getChainId = async() => { return await signer.getChainId() };
 
-// const raffle = new ethers.Contract(raffleAddress, raffleAbi(), signer);
+const raffle = new ethers.Contract(raffleAddress, raffleAbi(), signer);
 const characters = new ethers.Contract(charactersAddress, charactersAbi(), signer);
 const characterStorage = new ethers.Contract(characterStorageAddress, characterStorageAbi(), signer);
 const mes = new ethers.Contract(mesAddress, mesAbi(), signer);
@@ -85,19 +85,19 @@ const incrementClaim = async() => {
     }
 }
 
-const setMaxMint = async() => {
+const setMaxEntries = async() => {
     let mesBalance = await getMesBalance();
-    let max = Math.floor(mesBalance / priceEth);
+    let max = Math.max(1, Math.floor(mesBalance / priceEth));
     $("#number-to-mint").val(max);
     updatePrice();        
 }
 
-const approveMesToRaffle = async() => {
-    await mes.approve(raffleAddress, maxInt).then(async(tx_) => {
-        await waitForTransaction(tx_);
-        await checkMesApproved();
-    });
-}
+// const approveMesToRaffle = async() => {
+//     await mes.approve(raffleAddress, maxInt).then(async(tx_) => {
+//         await waitForTransaction(tx_);
+//         await checkMesApproved();
+//     });
+// }
 
 const getMesBalance = async()=>{
     const userAddress = await getAddress();
@@ -129,33 +129,37 @@ const getMultipliers = async() => {
     }
 }
 
-const checkMesApproved = async() => {
-    const userAddress = await getAddress();
-    const mesApproved = (Number(await mes.allowance(userAddress, raffleAddress)) >= maxInt);
-    if (mesApproved) {
-        $("#approve-mes-button").addClass("hidden");
-        $("#purchase-button").removeClass("disabled");
-        $("#purchase-button").attr("onclick", "purchaseRaffle()");
-        return true;
-    }
-    else {
-        $("#approve-mes-button").removeClass("hidden");
-        $("#purchase-button").addClass("disabled");
-        $("#purchase-button").attr("onclick", "");
-        return false;
-    }
-}
+// const checkMesApproved = async() => {
+//     const userAddress = await getAddress();
+//     const mesApproved = (Number(await mes.allowance(userAddress, raffleAddress)) >= maxInt);
+//     if (mesApproved) {
+//         $("#approve-mes-button").addClass("hidden");
+//         $("#purchase-button").removeClass("disabled");
+//         $("#purchase-button").attr("onclick", "purchaseRaffle()");
+//         return true;
+//     }
+//     else {
+//         $("#approve-mes-button").removeClass("hidden");
+//         $("#purchase-button").addClass("disabled");
+//         $("#purchase-button").attr("onclick", "");
+//         return false;
+//     }
+// }
 
 const getNumEntries = async() => {
-    // $("#entries-balance").text();
-    return;
+    let userAddress = await getAddress();
+    let totalEntries = await raffle._getTotalEntriesOfAddress(userAddress);
+    $("#entries-balance").text(totalEntries);
+    return totalEntries;
 }
 
 const purchaseRaffle = async() => {
-    let entries = Number($("#number-to-mint").val());
-    let mesApproved = await checkMesApproved();
-    try {
-        if (mesApproved) {
+    let entries = (parseEther($("#number-to-mint").val()).mul(5));
+    if (Number($("#number-to-mint").val()) * 5 > await getMesBalance()) {
+        await displayErrorMessage("Error: Not enough $MES!")
+    }
+    else {
+        try {
             const gasLimit = await raffle.estimateGas.raffleCommit(entries, ownedTokenID);
             const newGasLimit = parseInt((gasLimit * 1.2)).toString();
         
@@ -165,21 +169,21 @@ const purchaseRaffle = async() => {
                 await getNumEntries();
             });  
         }
-    }
-    catch (error) {
-        if ((error.message).includes("Raffle Inertia set! Raffles closed!")) {
-            await displayErrorMessage(`Error: Raffle closed!`)
-        }
-        else if ((error.message).includes("Invalid amount of entries!")) {
-            await displayErrorMessage(`Error: Invalid amount of entries!`)
-        }
-        else if ((error.message).includes("denied transaction")) {
-            console.log("Tx denied by user");
-        }
-        else {
-            await displayErrorMessage("An error occurred. See console and window alert for details...")
-            window.alert(error);
-            console.log(error);
+        catch (error) {
+            if ((error.message).includes("Raffle Inertia set! Raffles closed!")) {
+                await displayErrorMessage(`Error: Raffle closed!`)
+            }
+            else if ((error.message).includes("Invalid amount of entries!")) {
+                await displayErrorMessage(`Error: Invalid amount of entries!`)
+            }
+            else if ((error.message).includes("denied transaction")) {
+                console.log("Tx denied by user");
+            }
+            else {
+                await displayErrorMessage("An error occurred. See console and window alert for details...")
+                window.alert(error);
+                console.log(error);
+            }
         }
     }
 }
@@ -187,7 +191,7 @@ const purchaseRaffle = async() => {
 
 const updateCurrentChain = async() => {
     if ((await getChainId()) !== correctChain) {
-        displayErrorMessage("Error: Wrong Network!", false);
+        displayErrorMessage("Error: Wrong Network! Switch to Ethereum Mainnet.", false);
     }
     else {
         $("#error-popup").remove();
@@ -262,7 +266,7 @@ async function endLoading(tx, txStatus) {
 
 setInterval(async()=>{
     await updateInfo();
-    await checkMesApproved();
+    // await checkMesApproved();
     await getMesBalance();
     await getNumEntries();
 }, 5000)
@@ -278,8 +282,9 @@ ethereum.on("accountsChanged", async(accounts_)=>{
 });
 
 window.onload = async()=>{
+    await updateCurrentChain();
     await updateInfo();
-    await checkMesApproved();
+    // await checkMesApproved();
     await getMesBalance();
     await getNumEntries();
     await getMultipliers();
