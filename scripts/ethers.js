@@ -146,8 +146,42 @@ const checkMesApproved = async() => {
     }
 }
 
-const purchaseRaffle = async() => {
+const getNumEntries = async() => {
+    // $("#entries-balance").text();
     return;
+}
+
+const purchaseRaffle = async() => {
+    let entries = Number($("#number-to-mint").val());
+    let mesApproved = await checkMesApproved();
+    try {
+        if (mesApproved) {
+            const gasLimit = await raffle.estimateGas.raffleCommit(entries, ownedTokenID);
+            const newGasLimit = parseInt((gasLimit * 1.2)).toString();
+        
+            await raffle.raffleCommit(entries, ownedTokenID, {gasLimit: newGasLimit}).then( async(tx_) => {
+                await waitForTransaction(tx_);
+                await getMesBalance();
+                await getNumEntries();
+            });  
+        }
+    }
+    catch (error) {
+        if ((error.message).includes("Raffle Inertia set! Raffles closed!")) {
+            await displayErrorMessage(`Error: Raffle closed!`)
+        }
+        else if ((error.message).includes("Invalid amount of entries!")) {
+            await displayErrorMessage(`Error: Invalid amount of entries!`)
+        }
+        else if ((error.message).includes("denied transaction")) {
+            console.log("Tx denied by user");
+        }
+        else {
+            await displayErrorMessage("An error occurred. See console and window alert for details...")
+            window.alert(error);
+            console.log(error);
+        }
+    }
 }
 
 
@@ -221,7 +255,8 @@ async function endLoading(tx, txStatus) {
     $(`#etherscan-link-${txHash}`).remove();
     pendingTransactions.delete(tx);
     if (pendingTransactions.size == 0) {
-        // await updateMintInfo();
+        await getMesBalance();
+        await getNumEntries();
     }
 }
 
@@ -229,6 +264,7 @@ setInterval(async()=>{
     await updateInfo();
     await checkMesApproved();
     await getMesBalance();
+    await getNumEntries();
 }, 5000)
 
 const updateInfo = async () => {
@@ -245,6 +281,7 @@ window.onload = async()=>{
     await updateInfo();
     await checkMesApproved();
     await getMesBalance();
+    await getNumEntries();
     await getMultipliers();
     await updatePrice()
 };
