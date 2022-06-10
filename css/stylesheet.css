@@ -261,6 +261,11 @@ p {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
 }
 
+.btn-max {
+  margin-top: 5px;
+  padding: 0.8rem 2rem !important;
+}
+
 .mars-mes-form .btn-primary {
   background-color: #fd7e14;
   border-color: #fd7e14;

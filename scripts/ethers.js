@@ -85,19 +85,19 @@ const incrementClaim = async() => {
     }
 }
 
-const setMaxMint = async() => {
+const setMaxEntries = async() => {
     let mesBalance = await getMesBalance();
-    let max = Math.floor(mesBalance / priceEth);
+    let max = Math.max(1, Math.floor(mesBalance / priceEth));
     $("#number-to-mint").val(max);
     updatePrice();        
 }
 
-const approveMesToRaffle = async() => {
-    await mes.approve(raffleAddress, maxInt).then(async(tx_) => {
-        await waitForTransaction(tx_);
-        await checkMesApproved();
-    });
-}
+// const approveMesToRaffle = async() => {
+//     await mes.approve(raffleAddress, maxInt).then(async(tx_) => {
+//         await waitForTransaction(tx_);
+//         await checkMesApproved();
+//     });
+// }
 
 const getMesBalance = async()=>{
     const userAddress = await getAddress();
@@ -129,22 +129,22 @@ const getMultipliers = async() => {
     }
 }
 
-const checkMesApproved = async() => {
-    const userAddress = await getAddress();
-    const mesApproved = (Number(await mes.allowance(userAddress, raffleAddress)) >= maxInt);
-    if (mesApproved) {
-        $("#approve-mes-button").addClass("hidden");
-        $("#purchase-button").removeClass("disabled");
-        $("#purchase-button").attr("onclick", "purchaseRaffle()");
-        return true;
-    }
-    else {
-        $("#approve-mes-button").removeClass("hidden");
-        $("#purchase-button").addClass("disabled");
-        $("#purchase-button").attr("onclick", "");
-        return false;
-    }
-}
+// const checkMesApproved = async() => {
+//     const userAddress = await getAddress();
+//     const mesApproved = (Number(await mes.allowance(userAddress, raffleAddress)) >= maxInt);
+//     if (mesApproved) {
+//         $("#approve-mes-button").addClass("hidden");
+//         $("#purchase-button").removeClass("disabled");
+//         $("#purchase-button").attr("onclick", "purchaseRaffle()");
+//         return true;
+//     }
+//     else {
+//         $("#approve-mes-button").removeClass("hidden");
+//         $("#purchase-button").addClass("disabled");
+//         $("#purchase-button").attr("onclick", "");
+//         return false;
+//     }
+// }
 
 const getNumEntries = async() => {
     // $("#entries-balance").text();
@@ -153,18 +153,15 @@ const getNumEntries = async() => {
 
 const purchaseRaffle = async() => {
     let entries = Number($("#number-to-mint").val());
-    let mesApproved = await checkMesApproved();
     try {
-        if (mesApproved) {
-            const gasLimit = await raffle.estimateGas.raffleCommit(entries, ownedTokenID);
-            const newGasLimit = parseInt((gasLimit * 1.2)).toString();
-        
-            await raffle.raffleCommit(entries, ownedTokenID, {gasLimit: newGasLimit}).then( async(tx_) => {
-                await waitForTransaction(tx_);
-                await getMesBalance();
-                await getNumEntries();
-            });  
-        }
+        const gasLimit = await raffle.estimateGas.raffleCommit(entries, ownedTokenID);
+        const newGasLimit = parseInt((gasLimit * 1.2)).toString();
+    
+        await raffle.raffleCommit(entries, ownedTokenID, {gasLimit: newGasLimit}).then( async(tx_) => {
+            await waitForTransaction(tx_);
+            await getMesBalance();
+            await getNumEntries();
+        });  
     }
     catch (error) {
         if ((error.message).includes("Raffle Inertia set! Raffles closed!")) {
@@ -262,7 +259,7 @@ async function endLoading(tx, txStatus) {
 
 setInterval(async()=>{
     await updateInfo();
-    await checkMesApproved();
+    // await checkMesApproved();
     await getMesBalance();
     await getNumEntries();
 }, 5000)
@@ -279,7 +276,7 @@ ethereum.on("accountsChanged", async(accounts_)=>{
 
 window.onload = async()=>{
     await updateInfo();
-    await checkMesApproved();
+    // await checkMesApproved();
     await getMesBalance();
     await getNumEntries();
     await getMultipliers();
