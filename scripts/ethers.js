@@ -186,7 +186,7 @@ const purchaseRaffle = async() => {
 
 const updateCurrentChain = async() => {
     if ((await getChainId()) !== correctChain) {
-        displayErrorMessage("Error: Wrong Network!", false);
+        displayErrorMessage("Error: Wrong Network! Switch to Ethereum Mainnet.", false);
     }
     else {
         $("#error-popup").remove();
@@ -277,6 +277,7 @@ ethereum.on("accountsChanged", async(accounts_)=>{
 });
 
 window.onload = async()=>{
+    await updateCurrentChain();
     await updateInfo();
     // await checkMesApproved();
     await getMesBalance();
