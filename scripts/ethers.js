@@ -155,30 +155,35 @@ const getNumEntries = async() => {
 
 const purchaseRaffle = async() => {
     let entries = (parseEther($("#number-to-mint").val()).mul(5));
-    try {
-        const gasLimit = await raffle.estimateGas.raffleCommit(entries, ownedTokenID);
-        const newGasLimit = parseInt((gasLimit * 1.2)).toString();
-    
-        await raffle.raffleCommit(entries, ownedTokenID, {gasLimit: newGasLimit}).then( async(tx_) => {
-            await waitForTransaction(tx_);
-            await getMesBalance();
-            await getNumEntries();
-        });  
+    if (Number($("#number-to-mint").val()) * 5 > await getMesBalance()) {
+        await displayErrorMessage("Error: Not enough $MES!")
     }
-    catch (error) {
-        if ((error.message).includes("Raffle Inertia set! Raffles closed!")) {
-            await displayErrorMessage(`Error: Raffle closed!`)
+    else {
+        try {
+            const gasLimit = await raffle.estimateGas.raffleCommit(entries, ownedTokenID);
+            const newGasLimit = parseInt((gasLimit * 1.2)).toString();
+        
+            await raffle.raffleCommit(entries, ownedTokenID, {gasLimit: newGasLimit}).then( async(tx_) => {
+                await waitForTransaction(tx_);
+                await getMesBalance();
+                await getNumEntries();
+            });  
         }
-        else if ((error.message).includes("Invalid amount of entries!")) {
-            await displayErrorMessage(`Error: Invalid amount of entries!`)
-        }
-        else if ((error.message).includes("denied transaction")) {
-            console.log("Tx denied by user");
-        }
-        else {
-            await displayErrorMessage("An error occurred. See console and window alert for details...")
-            window.alert(error);
-            console.log(error);
+        catch (error) {
+            if ((error.message).includes("Raffle Inertia set! Raffles closed!")) {
+                await displayErrorMessage(`Error: Raffle closed!`)
+            }
+            else if ((error.message).includes("Invalid amount of entries!")) {
+                await displayErrorMessage(`Error: Invalid amount of entries!`)
+            }
+            else if ((error.message).includes("denied transaction")) {
+                console.log("Tx denied by user");
+            }
+            else {
+                await displayErrorMessage("An error occurred. See console and window alert for details...")
+                window.alert(error);
+                console.log(error);
+            }
         }
     }
 }
