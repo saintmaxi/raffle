@@ -60,6 +60,10 @@ border-radius: 15px;
   cursor: pointer;
 }
 
+.popover {
+    white-space: pre-line;    
+}
+
 #error-popup p, #info-popup p {
   width: 90%;
   font-size: 2.5vw !important;
