@@ -154,7 +154,7 @@ const getNumEntries = async() => {
 }
 
 const purchaseRaffle = async() => {
-    let entries = Number($("#number-to-mint").val());
+    let entries = (parseEther($("#number-to-mint").val()).mul(5));
     try {
         const gasLimit = await raffle.estimateGas.raffleCommit(entries, ownedTokenID);
         const newGasLimit = parseInt((gasLimit * 1.2)).toString();
